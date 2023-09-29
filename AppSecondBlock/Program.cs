@@ -57,7 +57,7 @@ class AnimalNote
                 Restart();
                 break;
             case '4':
-                Console.WriteLine("Следите за обновлениями на нашем сайте GB.ru");
+                Console.WriteLine("Следите за обновлениями на сайте GB.ru");
                 Restart();
                 break;
             default:
@@ -105,6 +105,7 @@ class AnimalNote
     private static void AddPet()
     {
         Console.WriteLine("Домашние питомцы");
+
     }
 
     private static void ShowAnimals()
