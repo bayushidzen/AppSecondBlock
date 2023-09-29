@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using System.Diagnostics;
+using static AppSecondBlock.Pet;
 
 namespace AppSecondBlock;
 
@@ -9,9 +10,7 @@ class AnimalNote
     {
         IntroText();
         Console.WriteLine("Выберите пункт меню");
-        int input = Convert.ToInt16(Console.Read());
-        
-        Console.WriteLine(input);
+        int input = Convert.ToInt32(Console.ReadLine());
         Selector(input);
     }
 
@@ -25,18 +24,17 @@ class AnimalNote
     {
         Console.WriteLine("Хотите продолжить работу? \n");
         Console.WriteLine("1) Да 2) Нет");
-        int input = Convert.ToInt16(Console.ReadKey());
-        switch (input)
+        int inRest = Convert.ToInt16(Console.ReadLine());
+        switch (inRest)
         {
-            case '1':
+            case 1:
                 Main();
                 break;
-            case '2':
+            case 2:
                 Console.WriteLine("Всего доброго! Благодарим за использование нашего приложения");
                 break;
             default:
                 Console.WriteLine("Выберите, пожалуйста, пункт из меню");
-                Restart();
                 break;
         }
     }
@@ -44,19 +42,19 @@ class AnimalNote
     {
         switch (input)
         {
-            case '1':
+            case 1:
                 ShowAnimals();
                 Restart();
                 break;
-            case '2':
+            case 2:
                 AddAnimal();
-                Restart();
+                //Restart();
                 break;
-            case '3':
+            case 3:
                 RemoveAnimal();
                 Restart();
                 break;
-            case '4':
+            case 4:
                 Console.WriteLine("Следите за обновлениями на сайте GB.ru");
                 Restart();
                 break;
@@ -79,14 +77,14 @@ class AnimalNote
         Console.WriteLine("Кого вы хотите добавить?");
         Console.WriteLine("1) Домашние питомцы: коты, собаки, хомячки");
         Console.WriteLine("2) Вьючные животные: лошади, верблюды, ослики");
-        int input = Convert.ToInt16(Console.ReadKey());
-        switch (input) 
+        int inAdd = Convert.ToInt16(Console.ReadLine());
+        switch (inAdd) 
         {
-            case '1':
+            case 1:
                 AddPet();
                 Restart();
                 break;
-            case '2':
+            case 2:
                 AddPackAnimal();
                 Restart();
                 break;
@@ -105,6 +103,8 @@ class AnimalNote
     private static void AddPet()
     {
         Console.WriteLine("Домашние питомцы");
+        Pet Pushok = new Pet("Pushok", "Cat", 6);
+        Console.WriteLine(Pushok);
 
     }
 
